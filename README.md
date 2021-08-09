@@ -61,23 +61,23 @@ DOCKER_BUILDKIT=1 docker compose build
   ---
 ## Sources:
   - [Link 1](https://github.com/thibaudrobin/docker-kali-light)
-  - ... Add others ... 
+  - ... Add others ...
 
 ## TO-DO:
-**_NOTE:_**  Tick off as done [] -> [x]
+**_NOTE:_**  Tick off as done [ ] -> [x]
 
-- [] Create a Makefile to clean the wpFolder and remove the named volume whenever the user wishes (i.e. allowing easy change of WP versions)
+- [ ] Create a Makefile to clean the wpFolder and remove the named volume whenever the user wishes (i.e. allowing easy change of WP versions)
 
-- [] Instructions for localhost:8080 to be mapped to a hostname, links for ideas (might require reverse-proxying with nginx?)
+- [ ] Instructions for localhost:8080 to be mapped to a hostname, links for ideas (might require reverse-proxying with nginx?)
   - [Link 1](https://serverfault.com/questions/574116/hostname-to-localhost-with-port-osx)
   - [Link 2](https://superuser.com/questions/1192774/can-i-map-a-ip-address-and-a-port-with-etc-hosts) This link has a Windows soln. too.
   - [Link 3](https://www.baeldung.com/linux/mapping-hostnames-ports)
 
-- [] A more robust networking interface between Kali and WordPress (i.e. Kali doesn't need host networking as it does now) or use a docker dns proxy, links for ideas and caveats.
+- [ ] A more robust networking interface between Kali and WordPress (i.e. Kali doesn't need host networking as it does now) or use a docker dns proxy, links for ideas and caveats.
   - [Link 1](https://github.com/oliverwiegers/pentest_lab) - The ideal configuration.
   - [Link 2](https://github.com/hiroshi/docker-dns-proxy)
   - [Link 3](https://github.com/docker/compose/issues/2925)
 
-- [] Cross-Platform compatibility ~ Testing on Windows
+- [ ] Cross-Platform compatibility ~ Testing on Windows
 
-- [] Testing Lab from Week 8 - Metasploit on Kali.
+- [ ] Testing Lab from Week 8 - Metasploit on Kali.
