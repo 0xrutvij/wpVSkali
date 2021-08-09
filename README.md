@@ -48,8 +48,8 @@ DOCKER_BUILDKIT=1 docker compose build
   ```
 
 - WordPress Time Machine - Recreating Image Upload Vuln. in WP 4.1
-  - Screenshot 1(WpScan output)![/images/wpTMvuln.png]
-  - Screenshot 2(Vulnerability POC recreated)![/images/vulnPOC.png]
+  - Screenshot 1 ![WpScan output](/images/wpTMvuln.png)
+  - Screenshot 2 ![Vulnerability POC recreated](/images/vulnPOC.png)
 
 
 
