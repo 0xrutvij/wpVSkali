@@ -26,5 +26,20 @@ services:
     volumes:
       - db:/var/lib/mysql
 
+  kali:
+    container_name: kaliCP
+    build:
+      dockerfile: Dockerfile
+      context: .
+    network_mode: "host"
+    volumes:
+      - kaliUser:$HOME
+      - kaliRoot:/root
+    entrypoint: /bin/bash
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
 volumes:
   db:
+  kaliUser:
+  kaliRoot:
