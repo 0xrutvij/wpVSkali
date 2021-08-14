@@ -2,10 +2,11 @@
 Docker Implementation of a Vagrant/Vbox setup for CodePath
 
 ## Build
-Build the image for Kali
+Build the image for Kali and make a folder to bind to the Wordpress container
 
 ```bash
 DOCKER_BUILDKIT=1 docker compose build
+mkdir wpFolder
 ```
 
 ## Run Wordpress(+mysql) and Kali containers
