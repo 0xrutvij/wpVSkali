@@ -69,6 +69,8 @@ mkdir wpFolder
 
 - [ ] Create a Makefile to clean the wpFolder and remove the named volume whenever the user wishes (i.e. allowing easy change of WP versions)
 
+- [ ] Push image to Docker Hub and reduce build times on user end. Specifically the Kali image since it is static once built.
+
 - [ ] Instructions for localhost:8080 to be mapped to a hostname, links for ideas (might require reverse-proxying with nginx?)
   - [Link 1](https://serverfault.com/questions/574116/hostname-to-localhost-with-port-osx)
   - [Link 2](https://superuser.com/questions/1192774/can-i-map-a-ip-address-and-a-port-with-etc-hosts) This link has a Windows soln. too.
