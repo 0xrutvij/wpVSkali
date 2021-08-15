@@ -1,6 +1,15 @@
 # wpVSkali
 Docker Implementation of a Vagrant/Vbox setup for CodePath
 
+## Installing Docker
+
+- For Mac OSX
+  Using the installer at this [link](https://docs.docker.com/docker-for-mac/install/) installs all the components necessary for this exercise.
+- For Windows
+  The installer at this [link](https://docs.docker.com/docker-for-windows/install/) includes all the necessary components.
+- For Linux Distros
+  Follow the distro specific instructions for the [Docker Engine](https://docs.docker.com/engine/install/) and for [Docker Compose](https://docs.docker.com/compose/install/). There is no GUI included for Linux, and if needed install [Portainer](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/), an open source application which can help view and manage containers.
+
 ## Build
 Build the image for Kali and make a folder to bind to the Wordpress container
 
