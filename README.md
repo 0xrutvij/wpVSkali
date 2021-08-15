@@ -94,7 +94,7 @@ mkdir wpFolder
 ## TO-DO:
 **_NOTE:_**  Tick off as done [ ] -> [x]
 
-- [ ] Create a Makefile to clean the wpFolder and remove the named volume whenever the user wishes (i.e. allowing easy change of WP versions)
+- [X] Create a <strike>Makefile</strike> CLI App to clean the wpFolder and remove the named volume whenever the user wishes (i.e. allowing easy change of WP versions)
 
 - [ ] Push image to Docker Hub and reduce build times on user end. Specifically the Kali image since it is static once built.
 
