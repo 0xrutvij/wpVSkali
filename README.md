@@ -36,26 +36,44 @@ mkdir wpFolder
 
 - This command removes all the containers and the network created. All named volumes are retained and they provide persistence.
 
-- When changing the version of WordPress, the db name volume needs to be removed by running
 
+- For changing WordPress versions, use the modifyCompose.py script, usage is as follows
   ```bash
-  docker volume rm wpvskali_db
-  ```
+  Modify Compose File.
 
-- And then the folder, 'wpFolder' should be emptied using
+  Usage:
+    modifyCompose.py [--wordpress=<ver>] [--wpPort=<port>]
+    modifyCompose.py (-h | --help)
+    modifyCompose.py (-v | --version)
+    modifyCompose.py (--listWpVer)
 
-  ```bash
-  rm -rf wpFolder && mkdir wpFolder
+  Options:
+    -h --help            Show this screen.
+    -v --version         Show version.
+    --wordpress=<ver>    Wordpress version to use [default: latest].
+    --wpPort=<port>      Port at which the Wordpress website is served [default: 8080].
+    --listWpVer          List Wordpress versions available.
   ```
+  - To change the version use (replace 4.1.0 with the version needed) and follow the prompts.
+    ```bash
+    python3 modifyCompose.py --wordpress=4.1.0
+    ```
+  - To change the port at which WP is served use and follow the prompts.
+    ```bash
+    python3 modifyCompose.py --wpPort=8080
+    ```
+  - To list the WP versions available on [Docker Hub](https://hub.docker.com/_/wordpress?tab=tags&page=1&ordering=-last_updated).
+    ```bash
+    python3 modifyCompose.py --listWpVer
+    ```
+  - To return the version to latest and port mapping to default and follow the prompts.
+    ```bash
+    python3 modifyCompose.py
+    ```
+    
+- <strike> When changing the version of WordPress, the db name volume needs to be removed and then the folder, 'wpFolder' should be emptied using </strike>
+- <strike> WordPress version can be changed by editing the docker-compose.yml file, and the tag for WordPress image </strike>
 
-- WordPress version can be changed by editing the docker-compose.yml file, and the tag for WordPress image
-  ```yaml
-  image: wordpress
-  ```
-  becomes one of the older versions tagged and available [here](https://hub.docker.com/_/wordpress?tab=tags&page=1&ordering=-last_updated)
-  ```yaml
-  image: "wordpress:4.1.0"
-  ```
 
 - WordPress Time Machine - Recreating Image Upload Vuln. in WP 4.1
   - Screenshot 1 ![WpScan output](/images/wpTMvuln.png)
