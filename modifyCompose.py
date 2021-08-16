@@ -54,7 +54,7 @@ if __name__ == '__main__':
     if arguments['--listWpVer']:
         if not os.path.exists(VER_LIST):
             if os.name == 'nt':
-                os.system('generateWpList.bat')
+                os.system('python3 ./src/generateWpList.py')
             else:
                 os.system('./src/generateWpList.sh')
 

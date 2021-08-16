@@ -4,11 +4,17 @@ Docker Implementation of a Vagrant/Vbox setup for CodePath
 ## Installing Docker
 
 - For Mac OSX
-  Using the installer at this [link](https://docs.docker.com/docker-for-mac/install/) installs all the components necessary for this exercise.
+  - Using the installer at this [link](https://docs.docker.com/docker-for-mac/install/) installs all the components necessary for this exercise.
+  - Ensure python3 is installed if the usage of modifyCompose CLI app is desired.
+
 - For Windows
-  The installer at this [link](https://docs.docker.com/docker-for-windows/install/) includes all the necessary components.
+  - The installer at this [link](https://docs.docker.com/docker-for-windows/install/) includes all the necessary components.
+  - Ensure python3 is installed if the usage of modifyCompose CLI app is desired.
+
 - For Linux Distros
-  Follow the distro specific instructions for the [Docker Engine](https://docs.docker.com/engine/install/) and for [Docker Compose](https://docs.docker.com/compose/install/). There is no GUI included for Linux, and if needed install [Portainer](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/), an open source application which can help view and manage containers.
+  - Follow the distro specific instructions for the [Docker Engine](https://docs.docker.com/engine/install/) and for [Docker Compose](https://docs.docker.com/compose/install/).
+  - There is no GUI included for Linux, and if needed install [Portainer](https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/), an open source application which can help view and manage containers.
+  - Ensure python3 is installed if the usage of modifyCompose CLI app is desired.
 
 ## Build
 Build the image for Kali and make a folder to bind to the Wordpress container
@@ -32,6 +38,12 @@ mkdir wpFolder
   docker compose up -d
   ID=$(docker ps -a | grep kaliCP | gawk '{print $1}') && docker exec -it $ID bash
   ```
+  On Windows the second command changes to
+
+  ```text
+  cmd.exe /c "for /F `"tokens=1`" %a in ('docker ps -a ^| findstr kaliCP') do docker exec -it %a bash"
+  ```
+
 - Second command opens a terminal with root privileges on Kali Linux and has the same network accessibility as the host machine.
 - Both on the host machine and on the Kali terminal, the WordPress website is accessible at http://localhost:8080
 - Note to self: xargs doesn't work with docker exec since it doesn't allocate a tty for the piped input, thus usage of a shell variable is necessary.
@@ -46,6 +58,8 @@ mkdir wpFolder
 
 
 - For changing WordPress versions, use the modifyCompose.py script, usage is as follows
+  Install the requirements file for python3 before proceeding `pip3 install -r requirements.txt`
+
   ```bash
   Modify Compose File.
 
@@ -78,7 +92,7 @@ mkdir wpFolder
     ```bash
     python3 modifyCompose.py
     ```
-    
+
 - <strike> When changing the version of WordPress, the db name volume needs to be removed and then the folder, 'wpFolder' should be emptied using </strike>
 - <strike> WordPress version can be changed by editing the docker-compose.yml file, and the tag for WordPress image </strike>
 
@@ -104,6 +118,10 @@ mkdir wpFolder
 
 - [X] Create a <strike>Makefile</strike> CLI App to clean the wpFolder and remove the named volume whenever the user wishes (i.e. allowing easy change of WP versions)
 
+- [X] Cross-Platform compatibility ~ Testing on Windows
+
+- [ ] Testing Lab from Week 8 - Metasploit on Kali.
+
 - [ ] Push image to Docker Hub and reduce build times on user end. Specifically the Kali image since it is static once built.
 
 - [ ] Instructions for localhost:8080 to be mapped to a hostname, links for ideas (might require reverse-proxying with nginx?)
@@ -115,7 +133,3 @@ mkdir wpFolder
   - [Link 1](https://github.com/oliverwiegers/pentest_lab) - The ideal configuration.
   - [Link 2](https://github.com/hiroshi/docker-dns-proxy)
   - [Link 3](https://github.com/docker/compose/issues/2925)
-
-- [ ] Cross-Platform compatibility ~ Testing on Windows
-
-- [ ] Testing Lab from Week 8 - Metasploit on Kali.
