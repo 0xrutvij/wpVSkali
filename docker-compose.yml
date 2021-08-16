@@ -29,7 +29,7 @@ services:
       context: .
     network_mode: host
     volumes:
-    - kaliUser:$HOME
+    - kaliUser:/~
     - kaliRoot:/root
     entrypoint: /bin/bash
     stdin_open: true

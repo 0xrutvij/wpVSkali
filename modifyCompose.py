@@ -108,7 +108,7 @@ if __name__ == '__main__':
                         shutil.rmtree(WORDPRESS_DIR, onerror=remove_readonly)
                     else:
                         shutil.rmtree(WORDPRESS_DIR)
-                        os.mkdir(WORDPRESS_DIR)
+                    os.mkdir(WORDPRESS_DIR)
                 else:
                     print("Operation aborted: Wordpress version wasn't changed.")
             else:

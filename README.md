@@ -13,6 +13,14 @@ Docker Implementation of a Vagrant/Vbox setup for CodePath
 ## Build
 Build the image for Kali and make a folder to bind to the Wordpress container
 
+---
+**NOTE**
+
+- Windows has build kit enabled by default on newer installs, in such cases the env var `DOCKER_BUILDKIT=1` can be skipped.
+- Install the latest python3 to use the wordpress version change CLI App.
+
+---
+
 ```bash
 DOCKER_BUILDKIT=1 docker compose build
 mkdir wpFolder
