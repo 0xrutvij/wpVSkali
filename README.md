@@ -28,6 +28,7 @@ Build the image for Kali and make a folder to bind to the Wordpress container
 ---
 
 ```bash
+git clone https://github.com/0xrutvij/wpVSkali.git
 DOCKER_BUILDKIT=1 docker compose build
 mkdir wpFolder
 ```
