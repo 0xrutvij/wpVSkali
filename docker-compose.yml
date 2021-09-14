@@ -1,21 +1,18 @@
 version: '3.1'
-
 services:
-
   wordpress:
-    image: "wordpress"
+    image: "wordpress:4.1.0"
     ports:
-      - 8080:80
+    - 8080:80
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - type: bind
-        source: ./wpFolder
-        target: /var/www/html
-
+    - type: bind
+      source: ./wpFolder
+      target: /var/www/html
   db:
     image: mysql:5.7
     environment:
@@ -24,21 +21,19 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - db:/var/lib/mysql
-
+    - db:/var/lib/mysql
   kali:
     container_name: kaliCP
     build:
       dockerfile: Dockerfile
       context: .
-    network_mode: "host"
+    network_mode: host
     volumes:
-      - kaliUser:$HOME
-      - kaliRoot:/root
+    - kaliUser:/~
+    - kaliRoot:/root
     entrypoint: /bin/bash
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-
+    stdin_open: true
+    tty: true
 volumes:
   db:
   kaliUser:

@@ -5,3 +5,4 @@ wpFolder/
 *.log
 *.sql
 *.sqlite
+__pycache__/
